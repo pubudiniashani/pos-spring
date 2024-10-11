@@ -1,4 +1,4 @@
 package lk.ijse.posspring.service;
 
-public class OrderItemService {
+public interface OrderItemService {
 }
