@@ -56,7 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void updateCustomer(String customerId, CustomerDTO customerDTO) {
         Optional<CustomerEntity> findCustomer = customerDao.findById(customerId);
         if (!findCustomer.isPresent()){
-            throw new CustomerNotFoundException("Customer not founs");
+            throw new CustomerNotFoundException("Customer not found");
         }else {
             findCustomer.get().setCustomerId(customerDTO.getCustomerId());
             findCustomer.get().setName(customerDTO.getName());
