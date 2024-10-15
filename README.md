@@ -2,6 +2,8 @@
 
  In this project spring backend API create for a POS system.This backend manages customers, items,and orders. 
 
+pos frontend :- 
+
 ## Technologies 
 
  Spring Web MVC
