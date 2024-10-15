@@ -1,12 +1,15 @@
 package lk.ijse.posspring.service.impl;
 
 import jakarta.transaction.Transactional;
+import lk.ijse.posspring.customStatusCodes.SelectedErrorStatus;
 import lk.ijse.posspring.dao.ItemDao;
 import lk.ijse.posspring.dao.OrderDao;
 import lk.ijse.posspring.dao.OrderItemDao;
+import lk.ijse.posspring.dto.OrderStatus;
 import lk.ijse.posspring.dto.impl.OrderDTO;
 import lk.ijse.posspring.entity.impl.OrderEntity;
 import lk.ijse.posspring.exception.CustomerNotFoundException;
+import lk.ijse.posspring.exception.OrderNotFoundException;
 import lk.ijse.posspring.service.OrderService;
 import lk.ijse.posspring.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +53,14 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-
+    @Override
+    public OrderDTO getOrderById(String orderId) {
+        Optional<OrderEntity> orderEntityOpt = orderDao.findById(orderId);
+        if (orderEntityOpt.isEmpty()) {
+            throw new OrderNotFoundException("Order not found ");
+        }
+        return null;
+    }
 
 
 }

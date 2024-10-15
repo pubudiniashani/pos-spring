@@ -1,6 +1,5 @@
 package lk.ijse.posspring.service;
 
-import lk.ijse.posspring.dto.impl.CustomerDTO;
 import lk.ijse.posspring.dto.impl.OrderDTO;
 
 import java.util.List;
@@ -12,4 +11,6 @@ public interface OrderService {
     List<OrderDTO> getAllOrders();
 
      void deleteOrder(String orderId);
+
+     OrderDTO getOrderById(String orderId);
 }
