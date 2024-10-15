@@ -5,7 +5,11 @@
 ## Technologies 
 
  Spring Web MVC
+
  Spring Data JPA
+
  MySQL
+
  Hibernate
+
  Ajax
