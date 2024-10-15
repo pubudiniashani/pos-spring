@@ -1,12 +1,11 @@
 # POS System Backend API With Spring
 
-### In this project spring backend API create for a POS system.
-### This backend manages customers, items,and orders 
+ In this project spring backend API create for a POS system.This backend manages customers, items,and orders. 
 
 ## Technologies 
 
-### Spring Web MVC
-### Spring Data JPA
-### MySQL
-### Hibernate
-### Ajax
+ Spring Web MVC
+ Spring Data JPA
+ MySQL
+ Hibernate
+ Ajax
