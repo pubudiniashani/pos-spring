@@ -26,7 +26,9 @@ public class ItemController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
                             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> saveItem(@RequestBody ItemDTO itemDTO){
+
         logger.info("Request to save item: {}", itemDTO);
+
         try {
             itemService.saveItem(itemDTO);
             logger.info("Item saved successfully: {}", itemDTO);
@@ -76,6 +78,7 @@ public class ItemController {
     @PutMapping(value = "/{itemId}")
     public ResponseEntity<Void> updateItem(@PathVariable("itemId") String itemId ,
                                                @RequestBody ItemDTO updatedItemDTO){
+
         logger.info("Request to update item: {}", itemId);
 
         try {
