@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/item")
+@CrossOrigin
 public class ItemController {
 
     @Autowired
@@ -66,14 +67,12 @@ public class ItemController {
             logger.error("ItemNotFoundException occurred for item Id: {}", itemId);
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
         }catch (Exception e){
             logger.error("Exception occurred while deleting item: {}", e.getMessage());
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 
     @PutMapping(value = "/{itemId}")
     public ResponseEntity<Void> updateItem(@PathVariable("itemId") String itemId ,
