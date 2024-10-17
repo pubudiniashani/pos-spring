@@ -9,6 +9,7 @@ import lk.ijse.posspring.dto.OrderStatus;
 import lk.ijse.posspring.dto.impl.OrderDTO;
 import lk.ijse.posspring.entity.impl.OrderEntity;
 import lk.ijse.posspring.exception.CustomerNotFoundException;
+import lk.ijse.posspring.exception.DataPersistException;
 import lk.ijse.posspring.exception.OrderNotFoundException;
 import lk.ijse.posspring.service.OrderService;
 import lk.ijse.posspring.util.Mapping;
@@ -36,7 +37,9 @@ public class OrderServiceImpl implements OrderService {
 
     public void saveOrder(OrderDTO orderDTO){
         OrderEntity saveOrder = orderDao.save(mapping.toOrderEntity(orderDTO));
-
+        if (saveOrder == null) {
+            throw new DataPersistException("Failed to save order");
+        }
     }
 
     @Override
