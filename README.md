@@ -5,7 +5,7 @@ POS frontend :- https://github.com/pubudiniashani/Assignment-06
  In this project spring backend API create for a POS system.This backend manages customers, items,and orders. This project
 built using spring.
 
-## Technologies 
+### Technologies 
 
  Spring Web MVC
 
@@ -19,11 +19,13 @@ built using spring.
 
  Log4j
 
-## Uses
+### Uses
 
  Customer manage:- Add , Update , Delete customers.
 
  Item manage:- Add , Update, Delete items.
 
  Order manage:- Add , View, Delete orders.
- 
+
+### License
+This project is licensed under the MIT License.
