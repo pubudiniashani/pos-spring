@@ -32,6 +32,7 @@ public class CustomerController {
             logger.info("Customer saved successfully: {}", customerDTO);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }catch (DataPersistException e){
+            logger.error("DataPersistException occurred while saving customer: {}", e.getMessage());
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }catch (Exception e){
